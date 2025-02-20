@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.4.1/css/bootstrap.css">
+</head>
+<body>
+<h1>User information List</h1>
+<table border="1">
+    {% for obj in data_list %}
+    <tr>
+        <td> {{ obj.id }}</td>
+        <td> {{ obj.name }}</td>
+        <td> {{ obj.age }}</td>
+        <td> edit</td>
+        <td>
+            <a href="/info_list/?uid= {{ obj.id }}">delete</a>
+        <td>
+    </tr>
+    {% endfor %}
+</table>
+<h1>Create New User</h1>
+<form method="post" action="/info_list/">
+    {% csrf_token %}
+    <input type="text" name="user" placeholder="User Name">
+    <input type="text" name="age" placeholder="Age">
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" value="Create">
+</form>
+
+</body>
+</html>

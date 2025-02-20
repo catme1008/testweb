@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News</title>
+</head>
+<body>
+<ul>
+{% for k,v in data_dict.items %}
+    <li> {{ k }} </li>
+    <li> {{ v }} </li>
+    <hr/>
+{% endfor %}
+</ul>
+</body>
+</html>

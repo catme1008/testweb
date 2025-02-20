@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tpl</title>
+</head>
+<body>
+    <h1>Template Learning</h1>
+    <div>{{ n1 }}</div>
+
+    <div>{{ status.1 }}</div>
+    <div>{{ status.2 }}</div>
+
+    <div>
+        {% for item in status %}
+        <input type="text" class="btn btn-primary" value={{item}}>
+        {% endfor %}
+    </div>
+<hr/>
+<div>
+    {{n3}}
+    {{n3.name}}
+
+    {% for k,v in n3.items %}
+        <li>{{ k }}={{ v }}</li>
+    {% endfor %}
+    <hr/>
+    {{n4.1}}
+    {{n4.1.name}}
+
+    {% for n4item in n4 %}
+        {% for k,v in n4item.items %}
+        <li>{{ k }}={{ v }}</li>
+    {% endfor %}
+    {% endfor %}
+
+</div>
+<hr/>
+{% if status.2 == "Normal" %}
+    <h1> "Robo Ready"</h1>
+{% elif status.2 == "Waiting" %}
+    <h1> "Waiting"</h1>
+{% else %}
+    <h1>"Please Check!"</h1>
+{% endif %}
+
+</body>
+</html>
