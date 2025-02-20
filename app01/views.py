@@ -83,7 +83,7 @@ def orm(request):
     print(data.name, data.type, data.reg_time)
     # 4.改
     Robots.objects.all().update(type='Cleaner')
-    return HttpResponse("Success")
+    return HttpResponse("Success!")
 
 
 def info_list(request):
